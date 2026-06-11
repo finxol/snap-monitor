@@ -76,6 +76,7 @@ def notify(date_str):
 
 
 def main():
+    unknown = 0
     for date_str in DATES:
         state = is_available(date_str)
         if state is True:
@@ -84,7 +85,14 @@ def main():
             print(f"  {date_str}: no tickets")
         else:
             print(f"  {date_str}: unknown")
+            unknown += 1
         time.sleep(GAP_BETWEEN_DATES)
+
+    # If every date came back "unknown", the check is degraded (Eurostar may be
+    # blocking us or changed its page). Exit non-zero so the workflow marks the
+    # run as failed and fires the Telegram failure alert.
+    if unknown == len(DATES):
+        raise SystemExit("ERROR: all dates returned 'unknown' — check is degraded")
 
 
 if __name__ == "__main__":
