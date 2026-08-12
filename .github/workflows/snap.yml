@@ -35,4 +35,4 @@ jobs:
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
-            --data-urlencode "text=⚠️ Snap monitor: a run FAILED (London→Paris check). It may be blocked or broken. Logs: https://github.com/sebastianferrero95-sketch/snap-monitor/actions"
+            --data-urlencode "text=⚠️ Snap monitor: a run FAILED (London→Paris check). It may be blocked or broken. Logs: https://github.com/finxol/snap-monitor/actions"
