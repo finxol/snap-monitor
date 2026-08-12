@@ -8,14 +8,9 @@ import requests
 
 ORIGIN = "7015400"          # London
 DESTINATION = "8727100"     # Paris
-ADULTS = 2
+ADULTS = 1
 DATES = [
-    "2026-06-15",
-    "2026-06-16",
-    "2026-06-17",
-    "2026-06-18",
-    "2026-06-19",
-    "2026-06-20",
+    "2026-08-21",
 ]
 
 NO_TICKETS_MARKER = "no Snap tickets are available"
